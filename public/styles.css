@@ -1,0 +1,56 @@
+body {
+  background-color: black;
+  color: white;
+  border: solid white;
+  border-radius: 0.5em;
+  width: 75vw;
+  height: 75vh;
+  left: 12.5vw;
+  top: 5vh;
+  position: relative;
+}
+
+.card {
+  /* left: 5%; */
+  position: relative;
+}
+
+.App-header {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.toolbar {
+  border-top: solid white;
+  border-bottom: solid white;
+  padding: 1em;
+  text-align: center;
+}
+
+.playerbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 16vh;
+  box-sizing: border-box;
+  display: block;
+}
+
+.tile {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.endTurnButton {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.itemCard {
+  float: left;
+  margin-right: 10px;
+}
