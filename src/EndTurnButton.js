@@ -94,6 +94,7 @@ export default function EndTurnButton(props) {
     changeEvent();
     changeNewItem();
     incrementDay();
+    props.setStamina(12);
     props.setClaimed(false);
   }
 

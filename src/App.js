@@ -23,18 +23,26 @@ function App() {
   });
   const [inventory, setInventory] = useState([]);
   const [claimed, setClaimed] = useState(false);
+  const [stamina, setStamina] = useState(12);
 
+  var spendStamina = () => {
+    if (stamina > 0) {
+      setStamina(stamina - 1);
+    }
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <h2>The Quiet Life</h2>
       </header>
-      <Toolbar season={season} day={day} />
+      <Toolbar season={season} day={day} stamina={stamina} />
       <WeatherCard weather={weather} setWeather={setWeather} />
       <EventCard event={event} setEvent={setEvent}/>
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />
-      <EndTurnButton weather={weather} setWeather={setWeather} event={event} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} newItem={newItem} setNewItem={setNewItem} setClaimed={setClaimed} />
+      <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>
+      <br></br>
+      <EndTurnButton setWeather={setWeather} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
       <PlayerBar inventory={inventory} setInventory={setInventory} />
     </div>
   );
