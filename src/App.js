@@ -58,7 +58,7 @@ function App() {
       <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>
       <br></br>
       <input type="number" onChange={coinCoster} className="endTurnButton"/>
-      <button onClick={spendCoins} className="endTurnButton">Spend coins</button>
+      <button onClick={spendCoins} className="spendCoinsButton">Spend coins</button>
       <br></br>
       <EndTurnButton setWeather={setWeather} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
       <PlayerBar inventory={inventory} setInventory={setInventory} />

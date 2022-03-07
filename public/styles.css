@@ -28,6 +28,12 @@ body {
   transform: translate(-50%);
 }
 
+.spendCoinsButton {
+  position: relative;
+  left: 45.8%;
+  transform: translate(-50%);
+}
+
 .itemCard {
   float: left;
   margin-right: 10px;
