@@ -28,6 +28,15 @@ body {
   transform: translate(-50%);
 }
 
+.FarmDisplay {
+  float: left;
+  position: relative;
+  left: 10%;
+  top: 2.5vh;
+  transform: translate(-50%);
+  text-align: center;
+}
+
 .spendCoinsButton {
   position: relative;
   left: 45.8%;

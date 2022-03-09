@@ -96,6 +96,11 @@ export default function EndTurnButton(props) {
     incrementDay();
     props.setStamina(12);
     props.setClaimed(false);
+    props.setFarmGrowth(props.farmGrowth + 1);
+    if (props.farmGrowth === 7) {
+      props.setTendOrHarvest('Harvest');
+    }
+    props.setFarmWeeds(props.farmWeeds + 1);
   }
 
   return (

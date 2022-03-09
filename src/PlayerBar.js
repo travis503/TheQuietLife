@@ -5,10 +5,7 @@ function InventoryTitles (props) {
     <div>
       {props.inventory.map((item, index) => {
         return(
-          // <>
-          // <div key={index}>{item.title}</div>
           <ItemCard key={index} label={item.label} title={item.title} effect={item.effect} />
-          // </>
           )
       })}
     </div>

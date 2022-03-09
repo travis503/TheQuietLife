@@ -5,6 +5,7 @@ import EventCard from './EventCard.js';
 import Toolbar from './Toolbar.js';
 import NewItemCard from './NewItemCard.js';
 import PlayerBar from './PlayerBar.js';
+import FarmDisplay from './FarmDisplay.js';
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
   const [stamina, setStamina] = useState(12);
   const [coins, setCoins] = useState(10);
   const [coinCost, setCoinCost] = useState(0);
+  const [farmGrowth, setFarmGrowth] = useState(0);
+  const [farmWeeds, setFarmWeeds] = useState(0);
+  const [tendOrHarvest, setTendOrHarvest] = useState('Tend');
 
   var spendStamina = () => {
     if (stamina > 0) {
@@ -52,6 +56,7 @@ function App() {
         <h2>The Quiet Life</h2>
       </header>
       <Toolbar season={season} day={day} stamina={stamina} coins={coins} />
+      <FarmDisplay tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds}/>
       <WeatherCard weather={weather} setWeather={setWeather} />
       <EventCard event={event} setEvent={setEvent}/>
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />
@@ -60,7 +65,7 @@ function App() {
       <input type="number" onChange={coinCoster} className="endTurnButton"/>
       <button onClick={spendCoins} className="spendCoinsButton">Spend coins</button>
       <br></br>
-      <EndTurnButton setWeather={setWeather} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
+      <EndTurnButton tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds} setWeather={setWeather} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
       <PlayerBar inventory={inventory} setInventory={setInventory} />
     </div>
   );
