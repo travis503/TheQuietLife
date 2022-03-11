@@ -31,7 +31,7 @@ body {
 .FarmDisplay {
   float: left;
   position: relative;
-  left: 10%;
+  left: 15%;
   top: 2.5vh;
   transform: translate(-50%);
   text-align: center;
