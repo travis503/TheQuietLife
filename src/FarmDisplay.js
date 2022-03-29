@@ -3,14 +3,14 @@ import React from 'react';
 export default function FarmDisplay(props) {
 
   var tendFarm = () => {
-    if (props.stamina >= 3) {
+    if (props.stamina >= 6) {
       if (props.farmGrowth >= 8) {
-        props.setStamina(props.stamina - 3);
+        props.setStamina(props.stamina - 6);
         harvest();
         props.setTendOrHarvest('Tend');
       }
       if (props.farmGrowth < 8) {
-        props.setStamina(props.stamina - 3);
+        props.setStamina(props.stamina - 6);
         if (props.farmGrowth === 7) {
           props.setTendOrHarvest('Harvest');
         }
@@ -36,7 +36,7 @@ export default function FarmDisplay(props) {
     <div className="FarmDisplay">
       <img src={`qlfarmdisplay.png`} alt="Farm Display"></img>
       <br></br>
-      <button onClick={tendFarm}>3 Stamina: {props.tendOrHarvest} the Farm</button>
+      <button onClick={tendFarm}>6 Stamina: {props.tendOrHarvest} the Farm</button>
     </div>
   )
 }
