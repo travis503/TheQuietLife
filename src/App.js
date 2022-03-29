@@ -7,6 +7,7 @@ import NewItemCard from './NewItemCard.js';
 import PlayerBar from './PlayerBar.js';
 import FarmDisplay from './FarmDisplay.js';
 import ShrineDisplay from './ShrineDisplay.js';
+import TownDisplay from './TownDisplay.js';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
   const [tendOrHarvest, setTendOrHarvest] = useState('Tend');
   const [luck, setLuck] = useState(5);
   const [prayers, setPrayers] = useState(0);
+  const [community, setCommunity] = useState(0);
 
   var spendStamina = () => {
     if (stamina > 0) {
@@ -61,6 +63,7 @@ function App() {
       <Toolbar season={season} day={day} stamina={stamina} coins={coins} />
       <FarmDisplay tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds}/>
       <WeatherCard weather={weather} setWeather={setWeather} />
+      <TownDisplay community={community} setCommunity={setCommunity} stamina={stamina} setStamina={setStamina} />
       <ShrineDisplay stamina={stamina} setStamina={setStamina} luck={luck} setLuck={setLuck} prayers={prayers} setPrayers={setPrayers} />
       <EventCard event={event} setEvent={setEvent}/>
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />

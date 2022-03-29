@@ -69,3 +69,12 @@ body {
   padding: 1em;
   text-align: center;
 }
+
+.TownDisplay {
+  float: right;
+  position: relative;
+  right: 15%;
+  top: 2.5vh;
+  transform: translate(50%);
+  text-align: center;
+}
