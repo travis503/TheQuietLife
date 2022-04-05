@@ -9,6 +9,7 @@ import FarmDisplay from './FarmDisplay.js';
 import ShrineDisplay from './ShrineDisplay.js';
 import TownDisplay from './TownDisplay.js';
 import MineDisplay from './MineDisplay.js';
+import ShopDisplay from './ShopDisplay.js';
 
 function App() {
 
@@ -63,17 +64,18 @@ function App() {
       </header>
       <Toolbar season={season} day={day} stamina={stamina} coins={coins} />
       <FarmDisplay tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds}/>
+      <ShopDisplay />
       <WeatherCard weather={weather} setWeather={setWeather} />
       <TownDisplay community={community} setCommunity={setCommunity} stamina={stamina} setStamina={setStamina} />
       <ShrineDisplay stamina={stamina} setStamina={setStamina} luck={luck} setLuck={setLuck} prayers={prayers} setPrayers={setPrayers} />
       <EventCard event={event} setEvent={setEvent}/>
       <MineDisplay stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} />
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />
-      <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>
+      {/* <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>
       <br></br>
       <input type="number" onChange={coinCoster} className="endTurnButton"/>
       <button onClick={spendCoins} className="spendCoinsButton">Spend coins</button>
-      <br></br>
+      <br></br> */}
       <EndTurnButton tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds} setWeather={setWeather} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
       <PlayerBar inventory={inventory} setInventory={setInventory} />
     </div>
