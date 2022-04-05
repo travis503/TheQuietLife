@@ -8,6 +8,7 @@ import PlayerBar from './PlayerBar.js';
 import FarmDisplay from './FarmDisplay.js';
 import ShrineDisplay from './ShrineDisplay.js';
 import TownDisplay from './TownDisplay.js';
+import MineDisplay from './MineDisplay.js';
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
       <TownDisplay community={community} setCommunity={setCommunity} stamina={stamina} setStamina={setStamina} />
       <ShrineDisplay stamina={stamina} setStamina={setStamina} luck={luck} setLuck={setLuck} prayers={prayers} setPrayers={setPrayers} />
       <EventCard event={event} setEvent={setEvent}/>
+      <MineDisplay stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} />
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />
       <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>
       <br></br>
