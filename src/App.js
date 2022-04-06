@@ -10,6 +10,8 @@ import ShrineDisplay from './ShrineDisplay.js';
 import TownDisplay from './TownDisplay.js';
 import MineDisplay from './MineDisplay.js';
 import ShopDisplay from './ShopDisplay.js';
+import TestModal from './TestModal.js';
+
 
 function App() {
 
@@ -63,6 +65,7 @@ function App() {
         <h2>The Quiet Life</h2>
       </header>
       <Toolbar season={season} day={day} stamina={stamina} coins={coins} />
+      {/* <TestModal /> */}
       <FarmDisplay tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds}/>
       <ShopDisplay />
       <WeatherCard weather={weather} setWeather={setWeather} />
