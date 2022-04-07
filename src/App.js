@@ -10,7 +10,7 @@ import ShrineDisplay from './ShrineDisplay.js';
 import TownDisplay from './TownDisplay.js';
 import MineDisplay from './MineDisplay.js';
 import ShopDisplay from './ShopDisplay.js';
-import TestModal from './TestModal.js';
+// import TestModal from './TestModal.js';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
     'label': 0,
     'title': 'A fine day.',
     'effect': 'None',
+    'description': 'No event here'
   });
   const [season, setSeason] = useState('Spring');
   const [day, setDay] = useState(1);
@@ -32,7 +33,7 @@ function App() {
   const [claimed, setClaimed] = useState(false);
   const [stamina, setStamina] = useState(12);
   const [coins, setCoins] = useState(10);
-  const [coinCost, setCoinCost] = useState(0);
+  // const [coinCost, setCoinCost] = useState(0);
   const [farmGrowth, setFarmGrowth] = useState(0);
   const [farmWeeds, setFarmWeeds] = useState(0);
   const [tendOrHarvest, setTendOrHarvest] = useState('Tend');
@@ -40,24 +41,24 @@ function App() {
   const [prayers, setPrayers] = useState(0);
   const [community, setCommunity] = useState(0);
 
-  var spendStamina = () => {
-    if (stamina > 0) {
-      setStamina(stamina - 1);
-    }
-  }
+  // var spendStamina = () => {
+  //   if (stamina > 0) {
+  //     setStamina(stamina - 1);
+  //   }
+  // }
 
-  var spendCoins = (e) => {
-    e.preventDefault();
-    if (coins >= coinCost) {
-      setCoins(coins - coinCost);
-    } else {
-      alert('Not enough coins!');
-    }
-  }
+  // var spendCoins = (e) => {
+  //   e.preventDefault();
+  //   if (coins >= coinCost) {
+  //     setCoins(coins - coinCost);
+  //   } else {
+  //     alert('Not enough coins!');
+  //   }
+  // }
 
-  var coinCoster = (e) => {
-    setCoinCost(e.target.value);
-  }
+  // var coinCoster = (e) => {
+  //   setCoinCost(e.target.value);
+  // }
 
   return (
     <div className="App">
