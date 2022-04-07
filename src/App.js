@@ -64,8 +64,7 @@ function App() {
       <header className="App-header">
         <h2>The Quiet Life</h2>
       </header>
-      <Toolbar season={season} day={day} stamina={stamina} coins={coins} />
-      {/* <TestModal /> */}
+      <Toolbar season={season} day={day} stamina={stamina} coins={coins} community={community} />
       <FarmDisplay tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds}/>
       <ShopDisplay />
       <WeatherCard weather={weather} setWeather={setWeather} />

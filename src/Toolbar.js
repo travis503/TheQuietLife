@@ -1,9 +1,8 @@
 export default function Toolbar(props) {
   return (
     <div className="toolbar">
-      <div className="stamina">Stamina: {props.stamina}</div>
       <div className="calendar">{props.season} {props.day}</div>
-      <div className="coins">Coins: {props.coins}</div>
+      <div className="toolbarRight">Stamina: {props.stamina} Coins: {props.coins} Community: {props.community}</div>
     </div>
   )
 }

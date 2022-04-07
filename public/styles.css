@@ -96,6 +96,11 @@ body {
   text-align: center;
 }
 
+/* .toolbarRight {
+  float: right;
+  right: 50px;
+} */
+
 .TownDisplay {
   float: right;
   position: relative;
