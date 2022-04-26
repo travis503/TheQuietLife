@@ -10,8 +10,6 @@ import ShrineDisplay from './ShrineDisplay.js';
 import TownDisplay from './TownDisplay.js';
 import MineDisplay from './MineDisplay.js';
 import ShopDisplay from './ShopDisplay.js';
-// import TestModal from './TestModal.js';
-
 
 function App() {
 
@@ -40,6 +38,7 @@ function App() {
   const [luck, setLuck] = useState(5);
   const [prayers, setPrayers] = useState(0);
   const [community, setCommunity] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   // var spendStamina = () => {
   //   if (stamina > 0) {
@@ -71,7 +70,7 @@ function App() {
       <WeatherCard weather={weather} setWeather={setWeather} />
       <TownDisplay community={community} setCommunity={setCommunity} stamina={stamina} setStamina={setStamina} />
       <ShrineDisplay stamina={stamina} setStamina={setStamina} luck={luck} setLuck={setLuck} prayers={prayers} setPrayers={setPrayers} />
-      <EventCard event={event} setEvent={setEvent}/>
+      <EventCard event={event} setEvent={setEvent} openModal={openModal} setOpenModal={setOpenModal}/>
       <MineDisplay stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} />
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />
       {/* <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>
