@@ -1,5 +1,5 @@
 import React from 'react';
-import { eventList } from './eventList.js';
+// import { eventList } from './eventList.js';
 
 export default function EndTurnButton(props) {
 
@@ -39,8 +39,8 @@ export default function EndTurnButton(props) {
   }
 
   var changeEvent = () => {
-    var eventRoll = Math.floor(Math.random() * eventList.length);
-    props.setEvent(eventList[eventRoll]);
+    var eventRoll = Math.floor(Math.random() * props.eventList.length);
+    props.setEvent(props.eventList[eventRoll]);
   }
 
   var changeNewItem = () => {

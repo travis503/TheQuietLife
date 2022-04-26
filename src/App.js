@@ -18,7 +18,9 @@ function App() {
     'label': 0,
     'title': 'A fine day.',
     'effect': 'None',
-    'description': 'No event here'
+    'description': 'No event here',
+    'button1': function() {alert('You pushed the button!')},
+    'button2': function() {setOpenModal(false)}
   });
   const [season, setSeason] = useState('Spring');
   const [day, setDay] = useState(1);
@@ -40,6 +42,41 @@ function App() {
   const [community, setCommunity] = useState(0);
   const [openModal, setOpenModal] = useState(false);
 
+
+  const eventList = [
+    {
+      'label': 0,
+      'title': 'A fine day.',
+      'effect': 'None',
+      'description': 'This day is fine!',
+      'button1': function() {alert('You pushed the button!')},
+      'button2': function() {setOpenModal(false)}
+    },
+    {
+      'label': 1,
+      'title': 'A great day.',
+      'effect': 'None',
+      'description': 'This day is great!',
+      'button1': function() {alert('You pushed the button!')},
+      'button2': function() {setOpenModal(false)}
+    },
+    {
+      'label': 2,
+      'title': 'An excellent day.',
+      'effect': 'None',
+      'description': 'This day is excellent!',
+      'button1': function() {alert('You pushed the button!')},
+      'button2': function() {setOpenModal(false)}
+    },
+    {
+      'label': 3,
+      'title': 'A lousy day.',
+      'effect': 'None',
+      'description': 'This day is lousy.',
+      'button1': function() {alert('You pushed the button!')},
+      'button2': function() {setOpenModal(false)}
+    },
+  ]
   // var spendStamina = () => {
   //   if (stamina > 0) {
   //     setStamina(stamina - 1);
@@ -78,7 +115,7 @@ function App() {
       <input type="number" onChange={coinCoster} className="endTurnButton"/>
       <button onClick={spendCoins} className="spendCoinsButton">Spend coins</button>
       <br></br> */}
-      <EndTurnButton tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds} setWeather={setWeather} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
+      <EndTurnButton tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds} setWeather={setWeather} eventList={eventList} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
       <PlayerBar inventory={inventory} setInventory={setInventory} />
     </div>
   );
