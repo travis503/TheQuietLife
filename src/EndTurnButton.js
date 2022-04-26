@@ -1,37 +1,7 @@
 import React from 'react';
+import { eventList } from './eventList.js';
 
 export default function EndTurnButton(props) {
-
-  var events = [
-    {
-      'label': 0,
-      'title': 'A fine day.',
-      'effect': 'None',
-      'description': 'This day is fine!'
-    },
-    {
-      'label': 1,
-      'title': 'A great day.',
-      'effect': 'None',
-      'description': 'This day is great!'
-
-    },
-    {
-      'label': 2,
-      'title': 'An excellent day.',
-      'effect': 'None',
-      'description': 'This day is excellent!'
-
-    },
-    {
-      'label': 3,
-      'title': 'A lousy day.',
-      'effect': 'None',
-      'description': 'This day is lousy.'
-
-    },
-
-  ]
 
   var newItems = [
     {
@@ -69,8 +39,8 @@ export default function EndTurnButton(props) {
   }
 
   var changeEvent = () => {
-    var eventRoll = Math.floor(Math.random() * events.length);
-    props.setEvent(events[eventRoll]);
+    var eventRoll = Math.floor(Math.random() * eventList.length);
+    props.setEvent(eventList[eventRoll]);
   }
 
   var changeNewItem = () => {
