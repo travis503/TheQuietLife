@@ -7,7 +7,9 @@ export const eventList = [
     'effect': 'None',
     'description': 'This day is fine!',
     'button1': function() {alert('You pushed the button!')},
-    'button2': function() {setOpenModal(false)}
+    'button2': function() {setOpenModal(false)},
+    'button1name': 'Push the button!',
+    'button2name': 'Close',
   },
   {
     'label': 1,
@@ -15,7 +17,9 @@ export const eventList = [
     'effect': 'None',
     'description': 'This day is great!',
     'button1': function() {alert('You pushed the button!')},
-    'button2': function() {setOpenModal(false)}
+    'button2': function() {setOpenModal(false)},
+    'button1name': 'Push the button!',
+    'button2name': 'Close',
   },
   {
     'label': 2,
@@ -23,7 +27,9 @@ export const eventList = [
     'effect': 'None',
     'description': 'This day is excellent!',
     'button1': function() {alert('You pushed the button!')},
-    'button2': function() {setOpenModal(false)}
+    'button2': function() {setOpenModal(false)},
+    'button1name': 'Push the button!',
+    'button2name': 'Close',
   },
   {
     'label': 3,
@@ -31,7 +37,9 @@ export const eventList = [
     'effect': 'None',
     'description': 'This day is lousy.',
     'button1': function() {alert('You pushed the button!')},
-    'button2': function() {setOpenModal(false)}
+    'button2': function() {setOpenModal(false)},
+    'button1name': 'Push the button!',
+    'button2name': 'Close',
   },
 
 ]

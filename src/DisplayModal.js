@@ -22,8 +22,8 @@ export default function DisplayModal(props) {
         <div>{props.event.title}</div>
         <img src={'qlevent.png'} alt='Event card' />
         <div>{props.event.description}</div>
-        <button onClick={button1}>button1</button>
-        <button onClick={button2}>button2</button>
+        <button onClick={button1}>{props.event.button1name}</button>
+        <button onClick={button2}>{props.event.button2name}</button>
       </div>
     )
   } else {

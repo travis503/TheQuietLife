@@ -18,9 +18,11 @@ function App() {
     'label': 0,
     'title': 'A fine day.',
     'effect': 'None',
-    'description': 'No event here',
+    'description': 'This day is fine!',
     'button1': function() {alert('You pushed the button!')},
-    'button2': function() {setOpenModal(false)}
+    'button2': function() {setOpenModal(false)},
+    'button1name': 'Push the button!',
+    'button2name': 'Close',
   });
   const [season, setSeason] = useState('Spring');
   const [day, setDay] = useState(1);
@@ -50,7 +52,9 @@ function App() {
       'effect': 'None',
       'description': 'This day is fine!',
       'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)}
+      'button2': function() {setOpenModal(false)},
+      'button1name': 'Push the button!',
+      'button2name': 'Close',
     },
     {
       'label': 1,
@@ -58,7 +62,9 @@ function App() {
       'effect': 'None',
       'description': 'This day is great!',
       'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)}
+      'button2': function() {setOpenModal(false)},
+      'button1name': 'Push the button!',
+      'button2name': 'Close',
     },
     {
       'label': 2,
@@ -66,7 +72,9 @@ function App() {
       'effect': 'None',
       'description': 'This day is excellent!',
       'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)}
+      'button2': function() {setOpenModal(false)},
+      'button1name': 'Push the button!',
+      'button2name': 'Close',
     },
     {
       'label': 3,
@@ -74,7 +82,9 @@ function App() {
       'effect': 'None',
       'description': 'This day is lousy.',
       'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)}
+      'button2': function() {setOpenModal(false)},
+      'button1name': 'Push the button!',
+      'button2name': 'Close',
     },
   ]
   // var spendStamina = () => {
