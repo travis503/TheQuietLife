@@ -78,6 +78,8 @@ export default function EndTurnButton(props) {
       props.setTendOrHarvest('Harvest');
     }
     props.setFarmWeeds(props.farmWeeds + 1);
+    props.setLuck(props.luck - props.luckModifier);
+    props.setLuckModifier(0);
   }
 
   return (

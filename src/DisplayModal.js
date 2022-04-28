@@ -20,10 +20,12 @@ export default function DisplayModal(props) {
     return (
       <div className="modal">
         <div>{props.event.title}</div>
-        <img src={'qlevent.png'} alt='Event card' />
+        <img src={'qlevent.png'} alt='Modal display' />
         <div>{props.event.description}</div>
         <button onClick={button1}>{props.event.button1name}</button>
-        <button onClick={button2}>{props.event.button2name}</button>
+        {props.event.button2name !== "None" &&
+          <button onClick={button2}>{props.event.button2name}</button>
+        }
       </div>
     )
   } else {

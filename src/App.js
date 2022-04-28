@@ -18,11 +18,14 @@ function App() {
     'label': 0,
     'title': 'A fine day.',
     'effect': 'None',
-    'description': 'This day is fine!',
-    'button1': function() {alert('You pushed the button!')},
-    'button2': function() {setOpenModal(false)},
-    'button1name': 'Push the button!',
-    'button2name': 'Close',
+    'description': 'Up and at \'em. Your luck is slightly increased today.',
+    'button1': function() {
+      setLuck(luck + 1);
+      setLuckModifier(1);
+      setOpenModal(false);},
+    'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
+    'button1name': 'Nifty.',
+    'button2name': 'None',
   });
   const [season, setSeason] = useState('Spring');
   const [day, setDay] = useState(1);
@@ -40,6 +43,7 @@ function App() {
   const [farmWeeds, setFarmWeeds] = useState(0);
   const [tendOrHarvest, setTendOrHarvest] = useState('Tend');
   const [luck, setLuck] = useState(5);
+  const [luckModifier, setLuckModifier] = useState(0);
   const [prayers, setPrayers] = useState(0);
   const [community, setCommunity] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -50,41 +54,53 @@ function App() {
       'label': 0,
       'title': 'A fine day.',
       'effect': 'None',
-      'description': 'This day is fine!',
-      'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)},
-      'button1name': 'Push the button!',
-      'button2name': 'Close',
+      'description': 'Up and at \'em. Your luck is slightly increased today.',
+      'button1': function() {
+        setLuck(luck + 5);
+        setLuckModifier(5);
+        setOpenModal(false);},
+      'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
+      'button1name': 'Nifty.',
+      'button2name': 'None',
     },
     {
       'label': 1,
       'title': 'A great day.',
       'effect': 'None',
-      'description': 'This day is great!',
-      'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)},
-      'button1name': 'Push the button!',
-      'button2name': 'Close',
+      'description': 'You slept like a log, and you\'re ready to tackle the day! Luck is increased today.',
+      'button1': function() {
+        setLuck(luck + 10);
+        setLuckModifier(10);
+        setOpenModal(false);},
+      'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
+      'button1name': 'Great!',
+      'button2name': 'None',
     },
     {
       'label': 2,
       'title': 'An excellent day.',
       'effect': 'None',
-      'description': 'This day is excellent!',
-      'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)},
-      'button1name': 'Push the button!',
-      'button2name': 'Close',
+      'description': 'You feel unstoppable. Luck is greatly increased today.',
+      'button1': function() {
+        setLuck(luck + 25);
+        setLuckModifier(25);
+        setOpenModal(false);},
+      'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
+      'button1name': 'Amazing!',
+      'button2name': 'None',
     },
     {
       'label': 3,
       'title': 'A lousy day.',
       'effect': 'None',
-      'description': 'This day is lousy.',
-      'button1': function() {alert('You pushed the button!')},
-      'button2': function() {setOpenModal(false)},
-      'button1name': 'Push the button!',
-      'button2name': 'Close',
+      'description': 'You didn\'t sleep very well. Luck is reduced today.',
+      'button1': function() {
+        setLuck(luck - 10);
+        setLuckModifier(-10);
+        setOpenModal(false);},
+      'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
+      'button1name': 'Phooey...',
+      'button2name': 'None',
     },
   ]
   // var spendStamina = () => {
@@ -125,7 +141,7 @@ function App() {
       <input type="number" onChange={coinCoster} className="endTurnButton"/>
       <button onClick={spendCoins} className="spendCoinsButton">Spend coins</button>
       <br></br> */}
-      <EndTurnButton tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds} setWeather={setWeather} eventList={eventList} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} />
+      <EndTurnButton tendOrHarvest={tendOrHarvest} setTendOrHarvest={setTendOrHarvest} farmGrowth={farmGrowth} setFarmGrowth={setFarmGrowth} farmWeeds={farmWeeds} setFarmWeeds={setFarmWeeds} setWeather={setWeather} eventList={eventList} setEvent={setEvent} day={day} setDay={setDay} season={season} setSeason={setSeason} setNewItem={setNewItem} setClaimed={setClaimed} setStamina={setStamina} luck = {luck} setLuck={setLuck} luckModifier={luckModifier} setLuckModifier={setLuckModifier} />
       <PlayerBar inventory={inventory} setInventory={setInventory} />
     </div>
   );
