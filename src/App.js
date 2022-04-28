@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import WeatherCard from './WeatherCard.js';
 import EndTurnButton from './EndTurnButton.js';
 import EventCard from './EventCard.js';
@@ -37,15 +37,23 @@ function App() {
   const [inventory, setInventory] = useState([]);
   const [claimed, setClaimed] = useState(false);
   const [stamina, setStamina] = useState(12);
+  const staminaRef = useRef({});
+  staminaRef.current = stamina;
   const [coins, setCoins] = useState(10);
+  const coinsRef = useRef({});
+  coinsRef.current = coins;
   // const [coinCost, setCoinCost] = useState(0);
   const [farmGrowth, setFarmGrowth] = useState(0);
   const [farmWeeds, setFarmWeeds] = useState(0);
   const [tendOrHarvest, setTendOrHarvest] = useState('Tend');
   const [luck, setLuck] = useState(5);
+  const luckRef = useRef({});
+  luckRef.current = luck;
   const [luckModifier, setLuckModifier] = useState(0);
   const [prayers, setPrayers] = useState(0);
   const [community, setCommunity] = useState(0);
+  const communityRef = useRef({});
+  communityRef.current = community;
   const [openModal, setOpenModal] = useState(false);
 
 
@@ -56,7 +64,7 @@ function App() {
       'effect': 'None',
       'description': 'Up and at \'em. Your luck is slightly increased today.',
       'button1': function() {
-        setLuck(luck + 5);
+        setLuck(luckRef.current + 5);
         setLuckModifier(5);
         setOpenModal(false);},
       'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
@@ -69,7 +77,7 @@ function App() {
       'effect': 'None',
       'description': 'You slept like a log, and you\'re ready to tackle the day! Luck is increased today.',
       'button1': function() {
-        setLuck(luck + 10);
+        setLuck(luckRef.current + 10);
         setLuckModifier(10);
         setOpenModal(false);},
       'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
@@ -80,9 +88,9 @@ function App() {
       'label': 2,
       'title': 'An excellent day.',
       'effect': 'None',
-      'description': 'You feel unstoppable. Luck is greatly increased today.',
+      'description': 'You feel unstoppable! Luck is greatly increased today.',
       'button1': function() {
-        setLuck(luck + 25);
+        setLuck(luckRef.current + 25);
         setLuckModifier(25);
         setOpenModal(false);},
       'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
@@ -95,12 +103,56 @@ function App() {
       'effect': 'None',
       'description': 'You didn\'t sleep very well. Luck is reduced today.',
       'button1': function() {
-        setLuck(luck - 10);
+        setLuck(luckRef.current - 10);
         setLuckModifier(-10);
         setOpenModal(false);},
       'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
       'button1name': 'Phooey...',
       'button2name': 'None',
+    },
+    {
+      'label': 4,
+      'title': 'Something shiny!',
+      'effect': 'None',
+      'description': 'You found a coin that somebody dropped on the ground. Lucky you!',
+      'button1': function() {
+        setCoins(coinsRef.current + 1);
+        setOpenModal(false);},
+      'button2': function() {alert('That button shouldn\'t be there! Tell Travis about this, then press the other one.')},
+      'button1name': 'I\'ll take that!',
+      'button2name': 'None',
+    },
+    {
+      'label': 5,
+      'title': 'An uncommon offer.',
+      'effect': 'None',
+      'description': 'The supply shop has a package of high-quality weedkiller on sale. It\'s more expensive than your usual brand, but if your farm is in a bit of state, this could definitely put you back on track.',
+      'button1': function() {
+        setCoins(coinsRef.current - 2);
+        setFarmWeeds(0);
+        setOpenModal(false);},
+      'button2': function() {setOpenModal(false)},
+      'button1name': 'I\'ll take it! (-2 coins)',
+      'button2name': 'I\'ll pass.',
+    },
+    {
+      'label': 6,
+      'title': 'A stranded villager.',
+      'effect': 'None',
+      'description': 'You receive a phone call from Roland, a local businessman. "My car broke down on the way to town! Could you pick me up and give me a ride?" It\'s pretty far out of your way, but he would be grateful.',
+      'button1': function() {
+        console.log('staminaRef.current is ' + staminaRef.current);
+        if (staminaRef.current >= 4) {
+          setStamina(staminaRef.current - 4);
+          setCommunity(communityRef.current + 1);
+          setOpenModal(false);
+        } else {
+          alert('Not enough stamina!');
+        }
+      },
+      'button2': function() {setOpenModal(false)},
+      'button1name': 'Sure, be right there! (-4 stamina, +1 community)',
+      'button2name': 'Sorry, can you call someone else?',
     },
   ]
   // var spendStamina = () => {
@@ -133,7 +185,7 @@ function App() {
       <WeatherCard weather={weather} setWeather={setWeather} />
       <TownDisplay community={community} setCommunity={setCommunity} stamina={stamina} setStamina={setStamina} />
       <ShrineDisplay stamina={stamina} setStamina={setStamina} luck={luck} setLuck={setLuck} prayers={prayers} setPrayers={setPrayers} />
-      <EventCard event={event} setEvent={setEvent} openModal={openModal} setOpenModal={setOpenModal}/>
+      <EventCard event={event} setEvent={setEvent} openModal={openModal} setOpenModal={setOpenModal} claimed={claimed} setClaimed={setClaimed} />
       <MineDisplay stamina={stamina} setStamina={setStamina} coins={coins} setCoins={setCoins} />
       <NewItemCard newItem={newItem} setNewItem={setNewItem} inventory={inventory} setInventory={setInventory} claimed={claimed} setClaimed={setClaimed} />
       {/* <button className="endTurnButton" onClick={spendStamina}>Spend Stamina</button>

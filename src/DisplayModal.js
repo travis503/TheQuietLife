@@ -10,10 +10,12 @@ export default function DisplayModal(props) {
 
   var button1 = () => {
     props.event.button1();
+    props.setClaimed(true);
   }
 
   var button2 = () => {
     props.event.button2();
+    props.setClaimed(true);
   }
 
   if (props.openModal) {
