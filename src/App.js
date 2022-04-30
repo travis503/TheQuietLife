@@ -141,7 +141,6 @@ function App() {
       'effect': 'None',
       'description': 'You receive a phone call from Roland, a local businessman. "My car broke down on the way to town! Could you pick me up and give me a ride?" It\'s pretty far out of your way, but he would be grateful.',
       'button1': function() {
-        console.log('staminaRef.current is ' + staminaRef.current);
         if (staminaRef.current >= 4) {
           setStamina(staminaRef.current - 4);
           setCommunity(communityRef.current + 1);
@@ -153,6 +152,22 @@ function App() {
       'button2': function() {setOpenModal(false)},
       'button1name': 'Sure, be right there! (-4 stamina, +1 community)',
       'button2name': 'Sorry, can you call someone else?',
+    },
+    {
+      'label': 7,
+      'title': 'Community involvement.',
+      'effect': 'None',
+      'description': 'Mayor Townsend is asking townsfolk how the community improvement fund should be allocated. He has narrowed the fund\'s useage down to two projects: restoring and cleaning the forest shrine, or making improvements to the local park. How would you vote?',
+      'button1': function() {
+        setLuck(luckRef.current + 2);
+        setOpenModal(false);
+      },
+      'button2': function() {
+        setCommunity(communityRef.current + 2);
+        setOpenModal(false);
+      },
+      'button1name': 'Renovate the shrine. (+2 luck)',
+      'button2name': 'Improve the park. (+2 community)',
     },
   ]
   // var spendStamina = () => {
