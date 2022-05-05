@@ -169,6 +169,22 @@ function App() {
       'button1name': 'Renovate the shrine. (+2 luck)',
       'button2name': 'Improve the park. (+2 community)',
     },
+    {
+      'label': 8,
+      'title': 'Clearing out the clutter.',
+      'effect': 'None',
+      'description': 'Your garage is getting a little crowded, and some of your old junk hasn\'t seen use is years. It\'s time to let some of it go. Much of it is still in good enough condition to sell, although much of it could be donated to those in need instead.',
+      'button1': function() {
+        setCommunity(communityRef.current + 3);
+        setOpenModal(false);
+      },
+      'button2': function() {
+        setLuck(luckRef.current + 3);
+        setOpenModal(false);
+      },
+      'button1name': 'Sell it. (+3 gold)',
+      'button2name': 'Donate it. (+3 community)',
+    },
   ]
   // var spendStamina = () => {
   //   if (stamina > 0) {
