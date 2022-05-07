@@ -185,6 +185,20 @@ function App() {
       'button1name': 'Sell it. (+3 gold)',
       'button2name': 'Donate it. (+3 community)',
     },
+    {
+      'label': 9,
+      'title': 'Happy birthday!',
+      'effect': 'None',
+      'description': 'It\'s your birthday! A package has arrived from home. How sweet! Inside is a small gift, but more importantly, a letter that gives you a warm fuzzy feeling inside.',
+      'button1': function() {
+        setCoins(coinsRef.current + 3);
+        setLuck(luckRef.current + 1);
+        setOpenModal(false);
+      },
+      'button2': function() {},
+      'button1name': 'Open it! (+3 gold, +1 luck)',
+      'button2name': 'None',
+    },
   ]
   // var spendStamina = () => {
   //   if (stamina > 0) {
