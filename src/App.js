@@ -199,6 +199,22 @@ function App() {
       'button1name': 'Open it! (+3 gold, +1 luck)',
       'button2name': 'None',
     },
+    {
+      'label': 10,
+      'title': 'Starfish Surprise',
+      'effect': 'None',
+      'description': 'Walking along the beach, you happen upon a washed up starfish. You happen to have a friend in town who collects dried starfish and would enjoy it as a gift! The starfish would probably appreciate being thrown back, though.',
+      'button1': function() {
+        setCommunity(communityRef.current + 2);
+        setOpenModal(false);
+      },
+      'button2': function() {
+        setLuck(luckRef.current + 2);
+        setOpenModal(false);
+      },
+      'button1name': 'Give it to your friend. (+2 Community)',
+      'button2name': 'Toss it back into the ocean. (+2 Luck)',
+    },
   ]
   // var spendStamina = () => {
   //   if (stamina > 0) {
